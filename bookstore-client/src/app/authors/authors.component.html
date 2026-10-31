@@ -1,0 +1,11 @@
+<div>
+  <h2>Search our Authors</h2>
+  <form (submit)="$event.preventDefault(); submit(authorQuery.value)">
+    <label for="authorId">Author Id:</label>
+    <input type="text" #authorQuery id="authorId" name="authorId">
+    <button type="submit">Search</button>
+  </form>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

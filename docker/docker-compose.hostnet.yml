@@ -1,0 +1,14 @@
+# Variante utilisée uniquement dans un environnement sans iptables : docker compose -f docker-compose.yml -f docker-compose.hostnet.yml up -d --build
+services:
+  mysql:
+    network_mode: host
+    networks: !reset []
+    ports: !reset []
+  booksserver:
+    network_mode: host
+    networks: !reset []
+    ports: !reset []
+    extra_hosts: ["mysql:127.0.0.1"]
+  booksapp:
+    network_mode: host
+    ports: !reset []
